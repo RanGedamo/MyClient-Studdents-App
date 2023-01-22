@@ -17,6 +17,7 @@ import Screen1 from '../../screens/Screen1';
 import Screen2 from '../../screens/Screen2';
 import Screen3 from '../../screens/Screen3';
 import Screen4 from '../../screens/Screen4';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const homeName = "Home";
 const postName = "Post";
@@ -25,7 +26,13 @@ const detailsName = "Details";
 const loginName = "Login";
 const registerName = "Register";
 
-const Tab = () => {
+const Tab = ({navigate}) => {
+  AsyncStorage.getItem("authorization").then(res=>{
+    if(!JSON.parse(res)){
+
+    }
+    
+  })
     const Tab = createBottomTabNavigator()
     return (
       <Tab.Navigator
