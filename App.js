@@ -9,7 +9,6 @@ import { GetAsyncStorage } from './src/AsyncStorage/AsyncStorage-Get';
 
 import { useEffect,useState } from "react"
 import Router from './src/component/Route/Auth';
-import Story from './src/story/story';
 
 
 
@@ -19,9 +18,11 @@ function App() {
 
 
   return (
-    <>
-    <Story/>
-    </>
+    <NavigationContainer>
+     <Auth />
+      {/* <StackLogin />  */}
+
+    </NavigationContainer>
   );
 }
 export default App

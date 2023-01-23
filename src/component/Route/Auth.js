@@ -23,7 +23,7 @@ function Auth({navigation}) {
             component={Tab}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="Screen3" component={Screen3} />
+          <Stack.Screen name="Story" component={Screen3} />
           <Stack.Screen name="Screen4" component={Screen4} />
           <Stack.Screen name="Screen5" component={Screen5} />
           <Stack.Screen name="LoginStack" component={StackLogin} /> 

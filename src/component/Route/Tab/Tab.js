@@ -18,6 +18,8 @@ import Screen2 from '../../screens/Screen2';
 import Screen3 from '../../screens/Screen3';
 import Screen4 from '../../screens/Screen4';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Story from '../../../story/story';
+import { PopMenu } from '../../features/PopMenu/popMenu';
 
 const homeName = "Home";
 const postName = "Post";
@@ -35,7 +37,8 @@ const Tab = ({navigate}) => {
   })
     const Tab = createBottomTabNavigator()
     return (
-      <Tab.Navigator
+      <>
+        <Tab.Navigator
         initialRouteName={homeName}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -74,9 +77,9 @@ const Tab = ({navigate}) => {
           style: { padding: 10, height: 70}
         }}>
 
-        <Tab.Screen name={homeName} component={Screen1} />
-        <Tab.Screen name={profileName} component={Screen2} />
-        <Tab.Screen name={postName} component={Screen4} />
+        <Tab.Screen options={{headerShown:false}} name={homeName} component={Story} />
+        <Tab.Screen options={{headerShown:false}} name={postName} component={Screen4} />
+        <Tab.Screen options={{headerShown:false}} name={profileName} component={Screen2} />
         {/* <Tab.Screen name={detailsName} component={DetailsScreen} /> */}
         {/* <Tab.Screen name={loginName} component={Login} />
         <Tab.Screen name={registerName} component={Register} /> */}
@@ -84,6 +87,8 @@ const Tab = ({navigate}) => {
 
       </Tab.Navigator>
 
+      </>
+    
     )
 }
 export default Tab
